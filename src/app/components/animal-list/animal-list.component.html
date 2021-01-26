@@ -1,0 +1,7 @@
+<h2>Your list <span *ngIf='averageRanking'>({{averageRanking}})</span></h2>
+<div class='row'>
+
+    <div class='col' *ngFor='let animal of animals'>
+        <app-animal [animal]="animal" (StarChange)='onStarChange($event)'></app-animal>
+    </div>
+</div>

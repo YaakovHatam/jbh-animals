@@ -1,0 +1,7 @@
+<h2> {{animal.name}}</h2>
+<p>Life average: {{animal.lifeTimeAverage}}</p>
+<p>
+    <i (click)='ranking(idx)' class="fas fa-star" *ngFor='let i of starLevel; let idx = index'></i>
+    <i (click)='ranking(starLevel.length + idx)' class="far fa-star" *ngFor='let i of unstarLevel; let idx = index'></i>
+</p>
+<button (click)='addToReadingList()' class='btn btn-success'>Read more later</button>

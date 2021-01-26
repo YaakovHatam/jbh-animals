@@ -1,0 +1,10 @@
+<h3>Things to read:</h3>
+<ul>
+    <li *ngFor='let animalReadingItem of animalReadingList'>
+        <a target="_blank" [href]='animalReadingItem.readMoreLink.toString()'>
+            {{animalReadingItem.name}}
+        </a>
+    </li>
+</ul>
+
+<button (click)='unsub()'>Unsub</button>
