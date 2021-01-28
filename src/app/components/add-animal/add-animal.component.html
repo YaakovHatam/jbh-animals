@@ -1,0 +1,18 @@
+<form [formGroup]='animalForm' (ngSubmit)='sendForm()'>
+    <div class="form-group">
+        <label>Name:</label>
+        <input formControlName='name' class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label>lifeTimeAverage:</label>
+        <input formControlName='lifeTimeAverage' class="form-control" placeholder="">
+    </div>
+    <div class="form-group">
+        <label>readMoreLink:</label>
+        <input formControlName='readMoreLink' class="form-control" placeholder="">
+    </div>
+
+    <div class="form-group">
+        <button [disabled]='!animalForm.valid'>{{updateMode ? 'Update': 'Create'}}</button>
+    </div>
+</form>

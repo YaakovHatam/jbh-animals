@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalModel } from 'src/app/models/animal.model';
-import { ReadingListService } from 'src/app/services/reading-list.service';
+import { AnimalService } from 'src/app/services/animal.service';
 
 @Component({
     selector: 'app-animal-list',
@@ -10,39 +10,15 @@ import { ReadingListService } from 'src/app/services/reading-list.service';
 export class AnimalListComponent implements OnInit {
     averageRanking: number;
     ranking: { animalName: string, starLevel: number }[];
-    animals: AnimalModel[];
-    constructor() {
+    animals: AnimalModel[] = [];
+    constructor(private animalService: AnimalService) {
         this.ranking = [];
     }
 
     ngOnInit(): void {
-        this.animals = [
-            {
-                name: 'dog',
-                lifeTimeAverage: 12,
-                readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
-            },
-            {
-                name: 'cat',
-                lifeTimeAverage: 7,
-                readMoreLink: new URL('https://en.wikipedia.org/wiki/Cat')
-            },
-            {
-                name: 'horse',
-                lifeTimeAverage: 12,
-                readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
-            },
-            {
-                name: 'cow',
-                lifeTimeAverage: 12,
-                readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
-            },
-            {
-                name: 'donkey',
-                lifeTimeAverage: 12,
-                readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
-            }
-        ];
+        this.animalService.get().subscribe(aRes => {
+            this.animals = aRes;
+        });
     }
 
     calculateAverage(): void {

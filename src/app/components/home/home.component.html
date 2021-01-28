@@ -1,1 +1,14 @@
 <h1>Welcome to our animal wiki!</h1>
+<div (click)='changeRandNum()' class='alert' [ngClass]="divClasses">
+    Click to toggle class - {{ randNum }}
+    ngClass receives Object as parameter, when the keys in the class name
+    and the values is boolean type
+    <pre>
+        <code>
+            {{ '{' }}
+                'alert-primary' : true,
+                'alert-secondary': false
+            {{ '{' }}
+        </code>
+    </pre>
+</div>
