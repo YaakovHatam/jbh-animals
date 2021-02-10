@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalModel } from './models/animal.model';
+import { UserService } from './services/user.service';
 
 @Component({
     selector: 'app-root',
@@ -8,8 +9,7 @@ import { AnimalModel } from './models/animal.model';
 })
 export class AppComponent implements OnInit {
     animalReadingList: AnimalModel[];
-
-    constructor() {
+    constructor(public userService: UserService) {
     }
 
     ngOnInit(): void {

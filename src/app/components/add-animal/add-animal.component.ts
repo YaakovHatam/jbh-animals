@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AnimalModel } from 'src/app/models/animal.model';
@@ -10,7 +10,7 @@ import { AnimalService } from 'src/app/services/animal.service';
     styleUrls: ['./add-animal.component.css']
 })
 export class AddAnimalComponent implements OnInit {
-
+    @Input() inline = false;
     animalForm: FormGroup;
     updateMode: boolean;
 

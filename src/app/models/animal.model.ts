@@ -4,5 +4,5 @@ export interface AnimalModel {
     name: string;
     lifeTimeAverage: number;
     readMoreLink: URL;
-    LivingCountries: CountryModel[];
+    LivingCountries?: CountryModel[];
 }

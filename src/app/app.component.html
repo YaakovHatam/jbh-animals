@@ -4,6 +4,7 @@
         <li><a routerLink="/animals">Animals</a></li>
         <li><a routerLink="/add">Add animals</a></li>
         <li><a routerLink="/contact">Contact us</a></li>
+        <li *ngIf='!(userService.isLogged() | async)'><a routerLink="/login">Login</a></li>
     </ul>
 </header>
 <main class='container'>

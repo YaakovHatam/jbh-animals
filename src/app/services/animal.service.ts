@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
 import { AnimalModel } from '../models/animal.model';
 
 @Injectable({
@@ -7,20 +9,22 @@ import { AnimalModel } from '../models/animal.model';
 })
 export class AnimalService {
 
+    private coins = [];
+
     private animal: BehaviorSubject<AnimalModel[]>;
     // tslint:disable-next-line:variable-name
     private _animals: AnimalModel[] = [
         {
             name: 'dog',
             lifeTimeAverage: 12,
-            readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
+            readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog'),
         },
         {
             name: 'cat',
             lifeTimeAverage: 7,
             readMoreLink: new URL('https://en.wikipedia.org/wiki/Cat')
         },
-        {
+        /*{
             name: 'horse',
             lifeTimeAverage: 12,
             readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
@@ -34,10 +38,10 @@ export class AnimalService {
             name: 'donkey',
             lifeTimeAverage: 12,
             readMoreLink: new URL('https://en.wikipedia.org/wiki/Dog')
-        }
+        }*/
     ];
 
-    constructor() {
+    constructor(private httpClient: HttpClient) {
         this.animal = new BehaviorSubject<AnimalModel[]>(this._animals);
     }
 
@@ -60,4 +64,6 @@ export class AnimalService {
         this._animals.splice(animalIndex, 1);
         this.create(a);
     }
+
+
 }

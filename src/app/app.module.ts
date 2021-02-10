@@ -11,6 +11,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ReadingListComponent } from './components/reading-list/reading-list.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { TestComponent } from './components/test/test.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +22,9 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
         HomeComponent,
         ReadingListComponent,
         AddAnimalComponent,
-        ContactUsComponent
+        ContactUsComponent,
+        TestComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

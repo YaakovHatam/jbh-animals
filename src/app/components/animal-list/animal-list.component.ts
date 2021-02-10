@@ -17,7 +17,7 @@ export class AnimalListComponent implements OnInit {
 
     ngOnInit(): void {
         this.animalService.get().subscribe(aRes => {
-            this.animals = aRes;
+            this.animals = aRes as AnimalModel[];
         });
     }
 

@@ -14,6 +14,8 @@ export class AnimalComponent implements OnInit {
         new EventEmitter<{ animalName: string, starLevel: number }>();
     starring: number;
 
+    temp = 'Hello';
+
 
     stars: number;
     starLevel: number[];

@@ -1,0 +1,4 @@
+<label><input #username placeholder="username"></label>
+<label><input #password placeholder="password"></label>
+<button (click)='login(username.value, password.value)'>Login</button>
+<div *ngIf='errorMessage'><span>{{errorMessage}}</span></div>
